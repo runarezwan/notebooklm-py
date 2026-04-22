@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "ipdc-crm-ai-demo-123456789"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }

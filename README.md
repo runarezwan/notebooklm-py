@@ -1,4 +1,4 @@
-# IPDC CRM Intelligent Assistant - Thesis Prototype
+# AI Powered Intelligent Decision Making System - Thesis Prototype
 
 This repository contains the AI-powered CRM Assistant developed for the thesis research on reducing Turnaround Time (TAT) in financial institutions.
 

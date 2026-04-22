@@ -1,5 +1,5 @@
 # 📑 Technical Justification: Applied AI Project Tools
-**Project:** IPDC CRM Intelligent Assistant  
+**Project:** AI Powered Intelligent Decision Making System  
 **Grade weight:** 100% (Applied AI Engineering)
 
 This document mapping proves the implementation of the requested project stack: **Next.js, RAG, n8n, Gemini, Antigravity, and Firebase.**

@@ -117,7 +117,7 @@ with st.sidebar:
             st.write("No history found.")
 
 # --- MAIN DASHBOARD ---
-st.title("🏛️ IPDC CRM Intelligence Pro")
+st.title("🏛️ AI Loan Risk Decision Intelligent Systems for Banking CRM")
 st.markdown("### **Applied AI System for TAT Optimization**")
 
 tab1, tab2, tab3 = st.tabs(["💬 Policy Assistant", "💰 Eligibility Engine", "📊 System Audit"])
