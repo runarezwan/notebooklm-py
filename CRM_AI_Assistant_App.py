@@ -6,7 +6,7 @@ import time
 from datetime import datetime
 
 # --- SYSTEM CONFIG & PERSISTENCE ---
-st.set_page_config(page_title="IPDC Intelligence Pro - V1.0", layout="wide", page_icon="🏦")
+st.set_page_config(page_title="AI Powered Intelligent Decision Making System - V1.0", layout="wide", page_icon="🏦")
 DATA_DIR = "data"
 HISTORY_FILE = os.path.join(DATA_DIR, "lead_history.json")
 
@@ -117,7 +117,7 @@ with st.sidebar:
             st.write("No history found.")
 
 # --- MAIN DASHBOARD ---
-st.title("🏛️ AI Loan Risk Decision Intelligent Systems for Banking CRM")
+st.title("🏛️ AI Powered Intelligent Decision Making System")
 st.markdown("### **Applied AI System for TAT Optimization**")
 
 tab1, tab2, tab3 = st.tabs(["💬 Policy Assistant", "💰 Eligibility Engine", "📊 System Audit"])
