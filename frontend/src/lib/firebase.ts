@@ -4,12 +4,12 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  projectId: "ipdc-crm-ai-demo-123456789",
-  appId: "1:762028635470:web:59406873d34f5f8d7cda1f",
-  storageBucket: "ipdc-crm-ai-demo-123456789.firebasestorage.app",
-  apiKey: "AIzaSyB12wK2zMkplX2oyuvRVszVAhnmgP-b6zk",
-  authDomain: "ipdc-crm-ai-demo-123456789.firebaseapp.com",
-  messagingSenderId: "762028635470"
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
 };
 
 const app = initializeApp(firebaseConfig);

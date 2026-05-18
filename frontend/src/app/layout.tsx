@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Loan Risk Decision Intelligent Systems for Banking CRM",
+  title: "CRM solution app for Bank",
   description: "Advanced AI-powered credit risk management and policy compliance system.",
 };
 
