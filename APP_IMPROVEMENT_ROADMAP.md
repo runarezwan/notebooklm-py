@@ -1,6 +1,6 @@
-# 🚀 AI Powered Intelligent Decision Making System: Strategic Roadmap
+# 🚀 AI Powered Intelligent Decision Making System FOR BANK: Strategic Roadmap
 
-This document serves as the master plan for evolving the AI Powered Intelligent Decision Making System from a prototype into a high-scale, AI-native enterprise credit risk management system.
+This document serves as the master plan for evolving the AI Powered Intelligent Decision Making System FOR BANK from a prototype into a high-scale, AI-native enterprise credit risk management system.
 
 ---
 

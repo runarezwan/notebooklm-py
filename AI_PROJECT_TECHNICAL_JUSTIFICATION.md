@@ -1,5 +1,5 @@
 # 📑 Technical Justification: Applied AI Project Tools
-**Project:** AI Powered Intelligent Decision Making System  
+**Project:** AI Powered Intelligent Decision Making System FOR BANK  
 **Grade weight:** 100% (Applied AI Engineering)
 
 This document mapping proves the implementation of the requested project stack: **Next.js, RAG, n8n, Gemini, Antigravity, and Firebase.**
