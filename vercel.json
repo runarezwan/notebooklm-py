@@ -1,16 +1,6 @@
 {
-  "projectSettings": {
-    "framework": "services"
-  },
-  "experimentalServices": {
-    "frontend": {
-      "entrypoint": "frontend",
-      "framework": "nextjs",
-      "routePrefix": "/"
-    },
-    "backend": {
-      "entrypoint": "backend",
-      "routePrefix": "/api"
-    }
-  }
+  "framework": "nextjs",
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/.next",
+  "installCommand": "cd frontend && npm install"
 }
