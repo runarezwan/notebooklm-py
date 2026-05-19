@@ -48,13 +48,13 @@ const ProductDonut: React.FC = () => {
 
   const labels = Object.keys(counts);
   const values = Object.values(counts);
-  const colors = ['#f7b217', '#6366f1', '#10b981'];
+  const colors = ['#059669', '#0d9488', '#22c55e'];
 
   return (
-    <div className="w-full bg-white/5 rounded-2xl p-4 backdrop-blur-md border border-white/10 shadow-2xl">
+    <div className="w-full bg-transparent p-4">
       {loading ? (
         <div className="h-[320px] flex items-center justify-center">
-          <div className="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin" />
+          <div className="w-8 h-8 border-2 border-emerald-600 border-t-transparent rounded-full animate-spin" />
         </div>
       ) : (
         <Plot
@@ -66,11 +66,11 @@ const ProductDonut: React.FC = () => {
               hole: 0.65,
               marker: {
                 colors,
-                line: { color: '#020617', width: 3 },
+                line: { color: '#ffffff', width: 3 },
               },
               textinfo: 'percent',
               textposition: 'outside',
-              textfont: { color: '#94a3b8', size: 12 },
+              textfont: { color: '#475569', size: 12 },
               hoverinfo: 'label+value+percent',
               direction: 'clockwise',
               sort: false,
@@ -83,20 +83,20 @@ const ProductDonut: React.FC = () => {
               y: -0.15,
               xanchor: 'center',
               orientation: 'h',
-              font: { color: '#94a3b8', size: 11 },
+              font: { color: '#475569', size: 11 },
             },
             annotations: [
               {
                 text: `<b>${total.toLocaleString()}</b><br><span style="font-size:11px;color:#64748b">Live Leads</span>`,
                 showarrow: false,
-                font: { size: 22, color: '#fff', family: 'Inter, sans-serif' },
+                font: { size: 22, color: '#1e293b', family: 'Inter, sans-serif' },
                 x: 0.5,
                 y: 0.5,
               },
             ],
             margin: { t: 20, r: 20, l: 20, b: 50 },
             paper_bgcolor: 'rgba(0,0,0,0)',
-            font: { color: '#fff', family: 'Inter, sans-serif' },
+            font: { color: '#1e293b', family: 'Inter, sans-serif' },
             autosize: true,
             height: 320,
           }}

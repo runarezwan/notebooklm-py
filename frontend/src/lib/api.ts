@@ -3,7 +3,7 @@
  * All endpoints use NEXT_PUBLIC_API_URL so we never hardcode localhost.
  */
 
-const API = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+const API = process.env.NEXT_PUBLIC_API_URL || "";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -152,7 +152,7 @@ export const api = {
     return postForm<OCRResponse>("/api/ocr", fd);
   },
 
-  health: () => get<HealthResponse>("/health"),
+  health: () => get<HealthResponse>("/api/health"),
 
   auditLogs: (page = 1, limit = 20) =>
     get<AuditLogsResponse>(`/api/audit?page=${page}&limit=${limit}`),

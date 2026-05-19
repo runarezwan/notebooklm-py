@@ -65,66 +65,66 @@ export default function AuditPanel() {
     >
       {/* Stats Row */}
       <div className="grid grid-cols-4 gap-4">
-        <div className="bg-slate-900/50 p-5 rounded-2xl border border-white/5">
-          <p className="text-slate-500 text-[10px] font-black uppercase tracking-wider mb-2">
+        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-slate-800">
+          <p className="text-slate-400 text-[10px] font-black uppercase tracking-wider mb-2">
             Total Appraisals (Cloud)
           </p>
           <div className="flex items-center justify-between">
-            <h3 className="text-2xl font-black tracking-tight">
+            <h3 className="text-2xl font-black tracking-tight text-slate-800">
               {stats.total_appraisals.toLocaleString()}
             </h3>
-            <div className="px-2 py-1 bg-emerald-500/10 text-emerald-500 rounded-lg text-xs font-bold flex items-center">
+            <div className="px-2 py-1 bg-emerald-50 text-emerald-600 rounded-lg text-xs font-bold flex items-center border border-emerald-100">
               <TrendingUp size={12} className="mr-1" /> Live
             </div>
           </div>
         </div>
-        <div className="bg-slate-900/50 p-5 rounded-2xl border border-white/5">
-          <p className="text-slate-500 text-[10px] font-black uppercase tracking-wider mb-2">
+        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-slate-800">
+          <p className="text-slate-400 text-[10px] font-black uppercase tracking-wider mb-2">
             Audit Events
           </p>
           <div className="flex items-center justify-between">
-            <h3 className="text-2xl font-black tracking-tight">
+            <h3 className="text-2xl font-black tracking-tight text-slate-800">
               {stats.total_audit_events.toLocaleString()}
             </h3>
-            <div className="px-2 py-1 bg-emerald-500/10 text-emerald-500 rounded-lg text-xs font-bold flex items-center">
+            <div className="px-2 py-1 bg-emerald-50 text-emerald-600 rounded-lg text-xs font-bold flex items-center border border-emerald-100">
               <TrendingUp size={12} className="mr-1" /> Tracked
             </div>
           </div>
         </div>
-        <div className="bg-slate-900/50 p-5 rounded-2xl border border-white/5">
-          <p className="text-slate-500 text-[10px] font-black uppercase tracking-wider mb-2">
+        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-slate-800">
+          <p className="text-slate-400 text-[10px] font-black uppercase tracking-wider mb-2">
             Policy Accuracy
           </p>
           <div className="flex items-center justify-between">
-            <h3 className="text-2xl font-black tracking-tight">
-              99.8<span className="text-sm font-normal text-slate-500">%</span>
+            <h3 className="text-2xl font-black tracking-tight text-slate-800">
+              99.8<span className="text-sm font-normal text-slate-400">%</span>
             </h3>
-            <div className="px-2 py-1 bg-emerald-500/10 text-emerald-500 rounded-lg text-xs font-bold flex items-center">
+            <div className="px-2 py-1 bg-emerald-50 text-emerald-600 rounded-lg text-xs font-bold flex items-center border border-emerald-100">
               <TrendingUp size={12} className="mr-1" /> GEMINI
             </div>
           </div>
         </div>
-        <div className="bg-slate-900/50 p-5 rounded-2xl border border-white/5">
-          <p className="text-slate-500 text-[10px] font-black uppercase tracking-wider mb-2">
+        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-slate-800">
+          <p className="text-slate-400 text-[10px] font-black uppercase tracking-wider mb-2">
             Active Branches
           </p>
           <div className="flex items-center justify-between">
-            <h3 className="text-2xl font-black tracking-tight">14</h3>
-            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_#10b981]" />
+            <h3 className="text-2xl font-black tracking-tight text-slate-800">14</h3>
+            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
           </div>
         </div>
       </div>
 
       {/* Charts Row */}
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
-        <div className="xl:col-span-2 bg-slate-900/20 p-6 rounded-3xl border border-white/5">
-          <h3 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-4">
+        <div className="xl:col-span-2 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
+          <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">
             Live Multi-Branch TAT Performance
           </h3>
           <TrendChart />
         </div>
-        <div className="xl:col-span-1 bg-slate-900/20 p-6 rounded-3xl border border-white/5">
-          <h3 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-4">
+        <div className="xl:col-span-1 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
+          <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">
             Lead Status (Firestore Realtime)
           </h3>
           <ProductDonut />
@@ -132,9 +132,9 @@ export default function AuditPanel() {
       </div>
 
       {/* Logs Table */}
-      <div className="bg-slate-900/50 rounded-3xl border border-white/5 flex-1 overflow-hidden flex flex-col shadow-2xl">
-        <div className="p-6 border-b border-white/5 flex items-center justify-between">
-          <h2 className="font-black text-xs uppercase tracking-widest text-indigo-500">
+      <div className="bg-white rounded-3xl border border-slate-200 flex-1 overflow-hidden flex flex-col shadow-sm text-slate-800">
+        <div className="p-6 border-b border-slate-100 flex items-center justify-between">
+          <h2 className="font-black text-xs uppercase tracking-widest text-emerald-600">
             Regulatory Audit Logs
           </h2>
           <div className="flex items-center gap-3">
@@ -142,22 +142,22 @@ export default function AuditPanel() {
               <button
                 onClick={() => setPage((p) => Math.max(1, p - 1))}
                 disabled={page <= 1}
-                className="text-[10px] bg-slate-800 px-3 py-1 rounded-full font-black uppercase tracking-widest hover:bg-slate-700 transition-colors disabled:opacity-30"
+                className="text-[10px] bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-black uppercase tracking-widest hover:bg-slate-200 transition-colors disabled:opacity-30"
               >
                 ← Prev
               </button>
-              <span className="text-[10px] text-slate-500 px-2">Page {page}</span>
+              <span className="text-[10px] text-slate-400 px-2">Page {page}</span>
               <button
                 onClick={() => setPage((p) => p + 1)}
                 disabled={logs.length < 20}
-                className="text-[10px] bg-slate-800 px-3 py-1 rounded-full font-black uppercase tracking-widest hover:bg-slate-700 transition-colors disabled:opacity-30"
+                className="text-[10px] bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-black uppercase tracking-widest hover:bg-slate-200 transition-colors disabled:opacity-30"
               >
                 Next →
               </button>
             </div>
             <button
               onClick={exportCSV}
-              className="text-[10px] bg-slate-800 px-3 py-1 rounded-full font-black uppercase tracking-widest hover:bg-slate-700 transition-colors flex items-center gap-1"
+              className="text-[10px] bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-black uppercase tracking-widest hover:bg-slate-200 transition-colors flex items-center gap-1"
             >
               <Download size={10} /> Export CSV
             </button>
@@ -166,31 +166,31 @@ export default function AuditPanel() {
         <div className="overflow-auto custom-scrollbar flex-1">
           {loading ? (
             <div className="p-12 flex items-center justify-center">
-              <div className="w-8 h-8 border-2 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin" />
+              <div className="w-8 h-8 border-2 border-emerald-500/20 border-t-emerald-600 rounded-full animate-spin" />
             </div>
           ) : logs.length > 0 ? (
-            <table className="w-full text-left border-collapse">
-              <thead className="bg-white/5 sticky top-0 backdrop-blur-md">
+            <table className="w-full text-left border-collapse text-slate-700">
+              <thead className="bg-slate-50 sticky top-0 backdrop-blur-md">
                 <tr>
-                  <th className="p-5 text-[10px] font-black uppercase tracking-widest text-slate-500">Timestamp</th>
-                  <th className="p-5 text-[10px] font-black uppercase tracking-widest text-slate-500">Service Path</th>
-                  <th className="p-5 text-[10px] font-black uppercase tracking-widest text-slate-500">Method</th>
-                  <th className="p-5 text-[10px] font-black uppercase tracking-widest text-slate-500">Summary</th>
-                  <th className="p-5 text-[10px] font-black uppercase tracking-widest text-slate-500 text-right">Status</th>
+                  <th className="p-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Timestamp</th>
+                  <th className="p-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Service Path</th>
+                  <th className="p-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Method</th>
+                  <th className="p-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Summary</th>
+                  <th className="p-5 text-[10px] font-black uppercase tracking-widest text-slate-400 text-right">Status</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/5">
+              <tbody className="divide-y divide-slate-100 bg-white">
                 {logs.map((log, i) => (
-                  <tr key={log.id || i} className="hover:bg-white/5 transition-all group cursor-default">
-                    <td className="p-5 text-sm font-medium tracking-tight">{log.timestamp?.slice(0, 19) || "—"}</td>
-                    <td className="p-5 text-sm text-slate-400">{log.endpoint}</td>
-                    <td className="p-5 text-[10px] font-mono text-indigo-400">{log.method}</td>
+                  <tr key={log.id || i} className="hover:bg-slate-50/50 transition-all group cursor-default">
+                    <td className="p-5 text-sm font-medium tracking-tight text-slate-700">{log.timestamp?.slice(0, 19) || "—"}</td>
+                    <td className="p-5 text-sm text-slate-500">{log.endpoint}</td>
+                    <td className="p-5 text-[10px] font-mono text-emerald-600 font-bold">{log.method}</td>
                     <td className="p-5 text-sm font-bold truncate max-w-xs">{log.summary}</td>
                     <td className="p-5 text-right">
                       <span className={`px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-tighter shadow-sm border ${
                         log.status_code < 400
-                          ? "bg-emerald-500/10 text-emerald-500 border-emerald-500/20"
-                          : "bg-red-500/10 text-red-500 border-red-500/20"
+                          ? "bg-emerald-50 text-emerald-600 border-emerald-200/60"
+                          : "bg-red-50 text-red-600 border-red-200/60"
                       }`}>
                         {log.status_code < 400 ? "Secured" : "Error"}
                       </span>

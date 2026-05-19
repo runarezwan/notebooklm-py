@@ -27,7 +27,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ incomeLimit, assetLimit, finalL
     const values = [incomeScore, assetScore, tenureScore, rateScore, dtiScore, creditScore];
 
     return (
-        <div className="w-full bg-white/5 rounded-2xl p-4 backdrop-blur-md border border-white/10 shadow-2xl">
+        <div className="w-full bg-transparent p-4">
             <Plot
                 data={[
                     {
@@ -35,9 +35,9 @@ const RadarChart: React.FC<RadarChartProps> = ({ incomeLimit, assetLimit, finalL
                         r: [...values, values[0]], // Close the polygon
                         theta: [...categories, categories[0]],
                         fill: 'toself',
-                        fillcolor: 'rgba(247, 178, 23, 0.15)',
-                        line: { color: '#f7b217', width: 2 },
-                        marker: { color: '#f7b217', size: 6 },
+                        fillcolor: 'rgba(16, 185, 129, 0.15)',
+                        line: { color: '#10b981', width: 2 },
+                        marker: { color: '#10b981', size: 6 },
                         name: 'Applicant Profile',
                     },
                     {
@@ -45,10 +45,10 @@ const RadarChart: React.FC<RadarChartProps> = ({ incomeLimit, assetLimit, finalL
                         r: [80, 70, 60, 75, 65, 85, 80], // Benchmark
                         theta: [...categories, categories[0]],
                         fill: 'toself',
-                        fillcolor: 'rgba(99, 102, 241, 0.08)',
-                        line: { color: '#6366f1', width: 1.5, dash: 'dot' },
+                        fillcolor: 'rgba(13, 148, 136, 0.08)',
+                        line: { color: '#0d9488', width: 1.5, dash: 'dot' },
                         marker: { size: 0 },
-                        name: 'IPDC Benchmark',
+                        name: 'CRM Benchmark',
                     },
                 ]}
                 layout={{
@@ -57,13 +57,13 @@ const RadarChart: React.FC<RadarChartProps> = ({ incomeLimit, assetLimit, finalL
                             visible: true,
                             range: [0, 100],
                             showticklabels: false,
-                            gridcolor: 'rgba(255,255,255,0.06)',
-                            linecolor: 'rgba(255,255,255,0.06)',
+                            gridcolor: 'rgba(0,0,0,0.06)',
+                            linecolor: 'rgba(0,0,0,0.06)',
                         },
                         angularaxis: {
-                            gridcolor: 'rgba(255,255,255,0.06)',
-                            linecolor: 'rgba(255,255,255,0.06)',
-                            tickfont: { color: '#94a3b8', size: 11 },
+                            gridcolor: 'rgba(0,0,0,0.06)',
+                            linecolor: 'rgba(0,0,0,0.06)',
+                            tickfont: { color: '#475569', size: 11 },
                         },
                         bgcolor: 'rgba(0,0,0,0)',
                     },
@@ -73,11 +73,11 @@ const RadarChart: React.FC<RadarChartProps> = ({ incomeLimit, assetLimit, finalL
                         y: -0.15,
                         xanchor: 'center',
                         orientation: 'h',
-                        font: { color: '#94a3b8', size: 11 },
+                        font: { color: '#475569', size: 11 },
                     },
                     margin: { t: 30, r: 40, l: 40, b: 50 },
                     paper_bgcolor: 'rgba(0,0,0,0)',
-                    font: { color: '#fff', family: 'Inter, sans-serif' },
+                    font: { color: '#1e293b', family: 'Inter, sans-serif' },
                     autosize: true,
                     height: 340,
                 }}

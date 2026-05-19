@@ -39,14 +39,14 @@ export default function LoginModal({ onClose }: LoginModalProps) {
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className="bg-slate-900 border border-white/10 rounded-3xl p-8 w-full max-w-md shadow-2xl"
+        className="bg-white border border-slate-200 rounded-3xl p-8 w-full max-w-md shadow-2xl"
       >
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-indigo-500 rounded-2xl mx-auto flex items-center justify-center shadow-lg shadow-indigo-500/20 mb-4">
+          <div className="w-16 h-16 bg-emerald-600 rounded-2xl mx-auto flex items-center justify-center shadow-lg shadow-emerald-500/10 mb-4">
             <Lock className="text-white" />
           </div>
-          <h2 className="text-2xl font-black">Admin Access</h2>
-          <p className="text-slate-400 text-sm mt-2">
+          <h2 className="text-2xl font-black text-slate-800">Admin Access</h2>
+          <p className="text-slate-500 text-sm mt-2">
             Required for System Audit &amp; CIB Verification
           </p>
         </div>
@@ -57,25 +57,25 @@ export default function LoginModal({ onClose }: LoginModalProps) {
             placeholder="Admin Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full bg-slate-800 border-none rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 outline-none text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-emerald-500/20"
           />
           <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full bg-slate-800 border-none rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 outline-none text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-emerald-500/20"
           />
           <button
             disabled={loading}
-            className="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-black py-4 rounded-xl shadow-lg transition-all active:scale-95 disabled:opacity-50"
+            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-4 rounded-xl shadow-md transition-all active:scale-95 disabled:opacity-50"
           >
             {loading ? "Authenticating..." : "Authenticate"}
           </button>
           <button
             type="button"
             onClick={onClose}
-            className="w-full text-slate-500 hover:text-white text-sm font-bold mt-2"
+            className="w-full text-slate-500 hover:text-emerald-600 text-sm font-bold mt-2"
           >
             Cancel
           </button>

@@ -15,7 +15,7 @@ const TrendChart: React.FC = () => {
     const avgTAT       = [4.2, 3.9, 3.5, 3.8, 3.2, 2.9, 2.7, 2.5, 2.3, 2.1, 1.9, 1.7];
 
     return (
-        <div className="w-full bg-white/5 rounded-2xl p-4 backdrop-blur-md border border-white/10 shadow-2xl">
+        <div className="w-full bg-transparent p-4">
             <Plot
                 data={[
                     {
@@ -24,10 +24,10 @@ const TrendChart: React.FC = () => {
                         type: 'scatter',
                         mode: 'lines+markers',
                         name: 'Home Loan',
-                        line: { color: '#f7b217', width: 2.5, shape: 'spline' },
+                        line: { color: '#059669', width: 2.5, shape: 'spline' },
                         marker: { size: 5 },
                         fill: 'tonexty',
-                        fillcolor: 'rgba(247, 178, 23, 0.05)',
+                        fillcolor: 'rgba(5, 150, 105, 0.04)',
                     },
                     {
                         x: months,
@@ -35,10 +35,10 @@ const TrendChart: React.FC = () => {
                         type: 'scatter',
                         mode: 'lines+markers',
                         name: 'Auto Loan',
-                        line: { color: '#6366f1', width: 2, shape: 'spline' },
+                        line: { color: '#0d9488', width: 2, shape: 'spline' },
                         marker: { size: 4 },
                         fill: 'tonexty',
-                        fillcolor: 'rgba(99, 102, 241, 0.05)',
+                        fillcolor: 'rgba(13, 148, 136, 0.04)',
                     },
                     {
                         x: months,
@@ -46,7 +46,7 @@ const TrendChart: React.FC = () => {
                         type: 'scatter',
                         mode: 'lines+markers',
                         name: 'SME',
-                        line: { color: '#10b981', width: 2, shape: 'spline' },
+                        line: { color: '#22c55e', width: 2, shape: 'spline' },
                         marker: { size: 4 },
                     },
                     {
@@ -62,15 +62,15 @@ const TrendChart: React.FC = () => {
                 ]}
                 layout={{
                     xaxis: {
-                        gridcolor: 'rgba(255,255,255,0.04)',
-                        tickfont: { color: '#94a3b8', size: 11 },
-                        linecolor: 'rgba(255,255,255,0.06)',
+                        gridcolor: 'rgba(0,0,0,0.05)',
+                        tickfont: { color: '#475569', size: 11 },
+                        linecolor: 'rgba(0,0,0,0.08)',
                     },
                     yaxis: {
-                        title: { text: 'Applications', font: { color: '#94a3b8', size: 11 } },
-                        gridcolor: 'rgba(255,255,255,0.04)',
-                        tickfont: { color: '#94a3b8', size: 10 },
-                        linecolor: 'rgba(255,255,255,0.06)',
+                        title: { text: 'Applications', font: { color: '#475569', size: 11 } },
+                        gridcolor: 'rgba(0,0,0,0.05)',
+                        tickfont: { color: '#475569', size: 10 },
+                        linecolor: 'rgba(0,0,0,0.08)',
                     },
                     yaxis2: {
                         title: { text: 'TAT (days)', font: { color: '#ef4444', size: 11 } },
@@ -86,12 +86,12 @@ const TrendChart: React.FC = () => {
                         y: -0.2,
                         xanchor: 'center',
                         orientation: 'h',
-                        font: { color: '#94a3b8', size: 10 },
+                        font: { color: '#475569', size: 10 },
                     },
                     margin: { t: 20, r: 60, l: 50, b: 60 },
                     paper_bgcolor: 'rgba(0,0,0,0)',
                     plot_bgcolor: 'rgba(0,0,0,0)',
-                    font: { color: '#fff', family: 'Inter, sans-serif' },
+                    font: { color: '#1e293b', family: 'Inter, sans-serif' },
                     autosize: true,
                     height: 320,
                     hovermode: 'x unified',

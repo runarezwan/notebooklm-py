@@ -13,27 +13,27 @@ interface HeaderProps {
 
 export default function Header({ user, role, onLogout, onLoginClick }: HeaderProps) {
   return (
-    <header className="h-20 border-b border-white/5 px-8 flex items-center justify-between bg-[#020617]/50 backdrop-blur-xl z-10">
-      <div className="flex items-center bg-slate-900/50 rounded-full px-4 py-2 border border-white/5 w-96">
+    <header className="h-20 border-b border-slate-200/80 px-8 flex items-center justify-between bg-white/80 backdrop-blur-xl z-10 shadow-sm">
+      <div className="flex items-center bg-slate-50 rounded-full px-4 py-2 border border-slate-200/80 w-96">
         <Search size={18} className="text-slate-500" />
         <input
           type="text"
           placeholder="Search policies, leads, or records..."
-          className="bg-transparent border-none outline-none px-3 text-sm flex-1"
+          className="bg-transparent border-none outline-none px-3 text-sm flex-1 text-slate-800 placeholder-slate-400"
         />
       </div>
       <div className="flex items-center gap-6">
         {user ? (
           <div className="flex items-center gap-3">
             <div className="text-right">
-              <p className="text-sm font-bold">{user.email?.split("@")[0]}</p>
-              <p className="text-[10px] text-violet-400 font-bold uppercase tracking-widest">
+              <p className="text-sm font-bold text-slate-800">{user.email?.split("@")[0]}</p>
+              <p className="text-[10px] text-emerald-600 font-bold uppercase tracking-widest">
                 {role}
               </p>
             </div>
             <button
               onClick={onLogout}
-              className="text-slate-500 hover:text-white transition-colors"
+              className="text-slate-400 hover:text-red-600 transition-colors"
             >
               <LogOut size={20} />
             </button>
@@ -41,13 +41,13 @@ export default function Header({ user, role, onLogout, onLoginClick }: HeaderPro
         ) : (
           <button
             onClick={onLoginClick}
-            className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"
+            className="flex items-center gap-2 text-sm text-slate-500 hover:text-emerald-600 transition-colors"
           >
             <UserIcon size={18} /> Login
           </button>
         )}
-        <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-violet-400 to-violet-600 p-[2px]">
-          <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center font-bold text-xs uppercase">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-500 to-emerald-600 p-[2px]">
+          <div className="w-full h-full rounded-full bg-white flex items-center justify-center font-bold text-xs uppercase text-emerald-600">
             {user?.email?.[0] || "G"}
           </div>
         </div>

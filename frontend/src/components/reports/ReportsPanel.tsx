@@ -33,10 +33,10 @@ export default function ReportsPanel() {
   ];
 
   const colorMap: Record<string, string> = {
-    indigo: "bg-indigo-500/10 text-indigo-500",
-    emerald: "bg-emerald-500/10 text-emerald-500",
-    violet: "bg-violet-500/10 text-violet-500",
-    orange: "bg-orange-500/10 text-orange-500",
+    indigo: "bg-indigo-50 text-indigo-600 border border-indigo-100/50",
+    emerald: "bg-emerald-50 text-emerald-600 border border-emerald-100/50",
+    violet: "bg-violet-50 text-violet-600 border border-violet-100/50",
+    orange: "bg-orange-50 text-orange-600 border border-orange-100/50",
   };
 
   return (
@@ -50,15 +50,15 @@ export default function ReportsPanel() {
       {cards.map((card) => (
         <div
           key={card.title}
-          className="bg-slate-900/50 p-8 rounded-3xl border border-white/5 shadow-xl flex flex-col items-center justify-center text-center transition-all hover:bg-slate-800/50 group"
+          className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md flex flex-col items-center justify-center text-center transition-all hover:bg-slate-50/50 group"
         >
           <div
             className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${colorMap[card.color]}`}
           >
             <card.icon size={32} />
           </div>
-          <h2 className="text-2xl font-black mb-3 text-white">{card.title}</h2>
-          <p className="text-slate-400 text-sm max-w-sm leading-relaxed">
+          <h2 className="text-2xl font-black mb-3 text-slate-800">{card.title}</h2>
+          <p className="text-slate-500 text-sm max-w-sm leading-relaxed">
             {card.desc}
           </p>
         </div>

@@ -94,6 +94,7 @@ class CIBQuery(BaseModel):
 # ---------------------------------------------------------------------------
 
 @app.get("/health")
+@app.get("/api/health")
 async def health():
     from firebase_utils import firebase_ready
     return {
@@ -107,6 +108,7 @@ async def health():
 # Chat (RAG)
 # ---------------------------------------------------------------------------
 
+@app.post("/chat")
 @app.post("/api/chat")
 @limiter.limit("20/minute")
 async def chat(query: ChatQuery, request: Request):
@@ -119,6 +121,7 @@ async def chat(query: ChatQuery, request: Request):
 # Eligibility
 # ---------------------------------------------------------------------------
 
+@app.post("/eligibility")
 @app.post("/api/eligibility")
 async def calculate_eligibility(data: EligibilityQuery):
     br = (data.interest_rate / 100) / 12
@@ -153,6 +156,7 @@ async def calculate_eligibility(data: EligibilityQuery):
 # History
 # ---------------------------------------------------------------------------
 
+@app.get("/history")
 @app.get("/api/history")
 async def get_history():
     return get_lead_history()
@@ -161,6 +165,7 @@ async def get_history():
 # CIB Verify
 # ---------------------------------------------------------------------------
 
+@app.post("/cib")
 @app.post("/api/cib")
 async def cib_verify(data: CIBQuery):
     """CIB-style risk analysis using Gemini + lead history from Firestore."""
@@ -229,6 +234,7 @@ async def cib_verify(data: CIBQuery):
 # Circular Ingestion
 # ---------------------------------------------------------------------------
 
+@app.post("/ingest")
 @app.post("/api/ingest")
 async def ingest_circular_file(
     file: UploadFile = File(...), title: str = Form(...)
@@ -258,11 +264,13 @@ async def ingest_circular_file(
 # Knowledge Base CRUD
 # ---------------------------------------------------------------------------
 
+@app.get("/knowledge")
 @app.get("/api/knowledge")
 async def list_knowledge():
     """Lists all ingested circulars with metadata."""
     return get_knowledge_docs()
 
+@app.delete("/knowledge/{doc_id}")
 @app.delete("/api/knowledge/{doc_id}")
 async def remove_knowledge(doc_id: str):
     """Deletes a knowledge base document."""
@@ -276,6 +284,7 @@ async def remove_knowledge(doc_id: str):
 # OCR
 # ---------------------------------------------------------------------------
 
+@app.post("/ocr")
 @app.post("/api/ocr")
 @limiter.limit("10/minute")
 async def process_document(file: UploadFile = File(...), request: Request = None):
@@ -341,6 +350,7 @@ async def process_document(file: UploadFile = File(...), request: Request = None
 # Audit Endpoints
 # ---------------------------------------------------------------------------
 
+@app.get("/audit")
 @app.get("/api/audit")
 async def list_audit_logs(page: int = 1, limit: int = 20):
     """Returns paginated audit logs."""
@@ -348,6 +358,7 @@ async def list_audit_logs(page: int = 1, limit: int = 20):
     logs = get_audit_logs(limit=limit, offset=offset)
     return {"page": page, "limit": limit, "logs": logs}
 
+@app.get("/audit/stats")
 @app.get("/api/audit/stats")
 async def audit_stats():
     """Returns aggregate audit statistics."""
@@ -356,6 +367,16 @@ async def audit_stats():
 # ---------------------------------------------------------------------------
 # Run
 # ---------------------------------------------------------------------------
+
+@app.api_route("/{full_path:path}", methods=["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"])
+async def catch_all(full_path: str, request: Request):
+    logger.warning("Catch-all triggered with path: /%s", full_path)
+    return {
+        "message": f"Backend Catch-all: /{full_path}", 
+        "status": "fallback_route",
+        "url": str(request.url),
+        "path": request.url.path
+    }
 
 if __name__ == "__main__":
     import uvicorn

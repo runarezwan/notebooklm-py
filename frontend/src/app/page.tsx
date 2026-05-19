@@ -23,14 +23,15 @@ export default function Dashboard() {
   const [showLogin, setShowLogin] = useState(false);
 
   return (
-    <div className="flex h-screen bg-[#020617] text-slate-100 font-sans selection:bg-indigo-500/30">
+    <div className="flex h-screen bg-slate-50 text-slate-800 font-sans selection:bg-emerald-500/20">
       <Toaster
         position="top-right"
         toastOptions={{
           style: {
-            background: "#1e293b",
-            color: "#f1f5f9",
-            border: "1px solid rgba(255,255,255,0.1)",
+            background: "#ffffff",
+            color: "#0f172a",
+            border: "1px solid rgba(0,0,0,0.05)",
+            boxShadow: "0 10px 15px -3px rgba(0,0,0,0.05)",
           },
         }}
       />
@@ -86,11 +87,11 @@ export default function Dashboard() {
           background: transparent;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #334155;
+          background: #cbd5e1;
           border-radius: 10px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #475569;
+          background: #94a3b8;
         }
       `}</style>
     </div>
